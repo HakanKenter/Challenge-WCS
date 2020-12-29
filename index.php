@@ -1,9 +1,12 @@
 <?php
     include 'functionCrud.php';
 
-    $id = $_GET['id_argonote'];
-    $delete = deleteArgonote($id);
-
+    if(isset($_GET["id_argonote"]))
+    {
+      $id = $_GET['id_argonote'];
+      $delete = deleteArgonote($id);
+    }
+    
     if(isset($_GET['action']) && $_GET['action'] == 'suppression')
     {
       $delete;
